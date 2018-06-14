@@ -1,0 +1,42 @@
+<% include ./partials/header %>
+<div class="container-fluid">
+      <div class="row">
+          <div class="col-md-12">
+              <div class="jumbotron bg-warning">
+                <div class="col-6"><h1 class="text-light">Guestbook</h1></div>
+                
+                <a href="" class="btn btn-lg btn-primary">Write in the Guestbook</a>
+              </div>
+          </div>
+          <div class="container">
+              <% if(entries && entries.length > 0)
+              {
+                entries.forEach(function(el){ %>
+            
+            <div class="row mb-4">
+              <div class="col-md-12">
+                  <div class="card">
+                      <div class="card-header bg-secondary text-light">
+                        <h3 class="h2"><%= el.title %></h3>
+                      </div>
+                      <div class="card-body bg-dark text-light">
+                        <p class="card-text"><%= el.content; %></p>
+                        <p><span class="text-muted"><%= el.createdon; %></span></p>
+                        <a href="#" class="btn btn-primary">Go somewhere</a>
+                      </div>
+                    </div>
+                </div>
+              </div>
+              <% });
+ 
+    } %>
+              </div>
+            </div>
+
+    
+    </div>
+    
+    
+    <% include ./partials/footer %>
+
+    
